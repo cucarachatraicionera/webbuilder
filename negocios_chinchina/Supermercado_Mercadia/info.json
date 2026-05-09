@@ -1,0 +1,18 @@
+{
+  "name": "Supermercado Mercadia",
+  "address": "a 10-82, Cra. 7 #10-2, Chinchiná, Caldas",
+  "phone": "68400901",
+  "website": "",
+  "rating": 4.6,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [
+    "Cierra a las 7:30 p.m."
+  ],
+  "types": [
+    ""
+  ],
+  "social_media": {},
+  "photos": [],
+  "google_maps_url": "https://www.google.com/maps/place/Supermercado+Mercadia/data=!4m7!3m6!1s0x8e477bf651e53dbf:0xf3bb60bf66993b48!8m2!3d4.9845304!4d-75.6058367!16s%2Fg%2F11c6l9mdf_!19sChIJvz3lUfZ7R44RSDuZZr9gu_M?authuser=0&hl=es-419&rclk=1"
+}

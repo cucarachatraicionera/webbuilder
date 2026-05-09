@@ -1,0 +1,80 @@
+{
+  "name": "RESTAURANTE Y CEVICHERIA EL COSTEÑO",
+  "address": "",
+  "phone": "3224074826",
+  "website": "https://api.whatsapp.com/send?phone=573135621168&text=",
+  "rating": 4.5,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [],
+  "types": [],
+  "social_media": {
+    "twitter": "https://x.com/whatsapp",
+    "youtube": "https://youtube.com/channel",
+    "instagram": "https://instagram.com/whatsapp",
+    "facebook": "https://facebook.com/profile.php"
+  },
+  "photos": [
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHa1WgRh9xZ73tYsXygxEYSyWRA_r2Uw1Q3L_sHJWugf6gokEPOmKdTcicWP5MFGHzkLTLNqKwk5-lScr40XVZa9bRKQvXaggJFN5Egna7beFAMj0qCGKIJ-RdeaFmqWV_muRq1=w32-h32-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGM03BBtRWnCP_ubUpXTWp-f3ap8Q6I2sjcq9-Tj0bNZLRMFP2vnj9bQaJPy76The18ZGVJ935QbukXe-OGM5SDoYJsR4N-_quBxieqCFusW24TVikYCRQjIkkYSIXs-AsvlN-D=w112-h112-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGildGCC4-r1spYn-0vuoYHvF4-cuP4Y4srcyqL1hISu2KsBEIRfXtFBTYIL_uOxjHzrMqniLOk57bLtG931E0cWtdSSWVbOjvfCnC5w0dohvKvMt3a5rB-8GCEv55dmiz2sa4=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSvXxfJsNP1exNA1v9MX20SRNqD1i7SabXcYCA667lMwC71-Vz3H5ithw12db8a3YXXq7Mm5DuwyOS-qrdvkDggvboG5tADxarN6H6Gu2em3eqId7DrhExIdEMgSbbdCbXcQaB=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSqmTXo_CiPckLMVxr1995RcmOzI5pCrDguC0KuOkB7uLUrDGzewWmqB5zvkgj9WsJZ04qtIqcRsaxM4RUPfG-YAAhyNeLwsMCRBpwN5YDz0yBTCFgq-gQfq1UkhaRJybAshAH=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGzArujHOoE1JyRTuPwTaMXEv89fwSQFZ7C3zpJYqJ3gRUfX0jFyOzKCPfjVY6EMZ_zZ_2g1BkcPKxWfgpp3dJ4F4dgYGIBjyi9z8vWS8zXg-DDlXDgYcayqYSlYjEAo_Da47C3=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGW5q5ypFhIIw9i8etwvLBHR9S1ubp3JsK3oVmgJt-I2ymR7wT__q9kV6UVbHnEpyyNbElwzfDMNd8b7w85MTQeYj3LQKrZJlTV59cLuY5cD2wtQYXcZ2z7_yVw62WwMCHBVEMRAQ=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-nuhUb6N3vVabM4UGG7HLX-3VvCcalj4qrg-MgY7zaF3qXTZ8lzLGV84xkvXEJfaQiMSMvX-kcJso1CzeBkC7x1Cg9y6LGIKuSvRMaVtGrYZk3zp1FnTUBPV6sIOc6sQU35cyaQ=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGHJpuyBDf03j42JNbGhwkIAyGFP_FLTCTGtSwJl6v8sOacsB5NPwrEcZoT5G67NXliy804MczgFOT4tzotvHNxDPbgdWNaE-zV5sQv-fREXb9oqIT3qOo2riJBkgmj7HJcjA9j=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5I5eGuF-lEqSQhLZ3kHvowFBNJtNZfWbonxpNuttaDKul_KWbrjrXkoyBgDTDloGTeovrNecX4a-17nGnwyn-MMuZ-97d5BesDqRBewcd6prS0KSVwD95sScAMPxxg3G5bqk=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHHWXWCpTEY3c_SPgEmDmjLa5ayQ_L7e7lPTI75XlXBNUadQKOh37Px-1mLdz0SlxbAhKuWnwE4SDjkmxSiZdYXreZAIGkTXLy7HI2yCJU5W5ufSr7orlW3Dd0FM96o4jc8oipAfw=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFN12H0RuByYgKOtXrUWlOQrDBn4ZleKMRL8LEzHZyHd6UhOziM9rc9AHZah5GNgi4_yKftJlonVgRhcxMsF8o8sdQK1WLv7cORWF-P-9lkRHko1JJOeP6ZiT1NgqaFQOTK5Hmxfg=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    }
+  ],
+  "google_maps_url": "https://www.google.com/maps/place/RESTAURANTE+Y+CEVICHERIA+EL+COSTE%C3%91O/data=!4m7!3m6!1s0x8e38814f244dd2bd:0x9199937852e32340!8m2!3d4.8711465!4d-75.622684!16s%2Fg%2F11f634q12c!19sChIJvdJNJE-BOI4RQCPjUniTmZE?authuser=0&hl=es-419&rclk=1"
+}

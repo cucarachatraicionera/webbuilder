@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sitios Web · Chinchiná + Santa Rosa de Cabal · CRM</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#07070d;color:#e8e8f0;min-height:100vh;background-image:radial-gradient(ellipse at 20% 50%,rgba(168,85,247,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(59,130,246,0.06) 0%,transparent 50%)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+header{padding:40px 0 20px;text-align:center}header h1{font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#a855f7,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header p{color:#6666aa;margin-top:8px;font-size:1.05rem}
+.crm-summary{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:16px auto;max-width:800px}
+.crm-stat{padding:10px 20px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-align:center;min-width:100px}
+.crm-stat .num{font-size:1.5rem;font-weight:800;color:white}
+.crm-stat .label{font-size:0.7rem;color:#8888aa;text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
+.crm-stat.pendiente .num{color:#f59e0b}.crm-stat.contactado .num{color:#3b82f6}
+.crm-stat.seguimiento1 .num{color:#8b5cf6}.crm-stat.seguimiento2 .num{color:#ec4899}
+.crm-stat.cerrado .num{color:#10b981}
+.loc-tabs{display:flex;justify-content:center;gap:6px;margin:12px 0 20px;flex-wrap:wrap}
+.loc-tab{padding:8px 18px;border-radius:100px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:#8888aa;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.3s}
+.loc-tab:hover{background:rgba(255,255,255,0.08);color:#ddd}
+.loc-tab.active{background:rgba(168,85,247,0.2);border-color:#a855f7;color:#c084fc}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;padding-bottom:60px}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:20px;transition:all 0.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.12);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+.card .bar{position:absolute;top:0;left:0;right:0;height:4px}
+.card h3{font-size:1rem;font-weight:700;margin-top:6px;color:white}
+.card .rating{color:#fbbf24;font-size:0.85rem;font-weight:600;margin-top:4px}
+.card .info{color:#6666aa;font-size:0.8rem;margin-top:6px;line-height:1.5}
+.card .actions{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.card .actions a{padding:6px 14px;border-radius:100px;font-size:0.75rem;font-weight:600;text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.08);color:#aaa;background:rgba(255,255,255,0.03)}
+.card .actions a:hover{background:rgba(255,255,255,0.1);color:white}
+.card .actions .visit{background:rgba(168,85,247,0.15);border-color:rgba(168,85,247,0.3);color:#c084fc}
+.card.hidden{display:none}
+.crm-row{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.04)}
+.crm-status{flex:1;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:#ddd;font-size:0.75rem;font-weight:600;cursor:pointer;outline:none}
+.crm-status:focus{border-color:#a855f7}
+.crm-status option{background:#1a1a2e;color:#ddd}
+.crm-date{font-size:0.65rem;color:#6666aa;white-space:nowrap}
+.crm-badge{display:inline-block;font-size:0.6rem;padding:2px 8px;border-radius:100px;font-weight:700;margin-left:6px;text-transform:uppercase;letter-spacing:0.03em}
+.informe-link{display:block;text-align:center;padding:20px;margin:0 0 20px;background:linear-gradient(135deg,rgba(168,85,247,0.08),rgba(59,130,246,0.08));border:1px solid rgba(255,255,255,0.06);border-radius:16px;text-decoration:none;transition:all 0.3s}
+.informe-link:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+.informe-link h2{font-size:1.2rem;font-weight:700;color:white}
+.informe-link p{color:#8888aa;font-size:0.85rem;margin-top:4px}
+.speech-modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7);align-items:center;justify-content:center}
+.speech-modal.open{display:flex}
+.speech-content{background:#0d0d18;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:30px;max-width:600px;width:90%;max-height:80vh;overflow-y:auto;position:relative}
+.speech-content h2{font-size:1.3rem;font-weight:800;color:white;margin-bottom:8px}
+.speech-content .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;color:#8888aa;font-size:1.5rem;cursor:pointer}
+.speech-content .close-btn:hover{color:white}
+.speech-body{font-size:0.9rem;line-height:1.7;color:#ccc;margin-top:16px}
+.speech-body p{margin-bottom:10px}
+@media(max-width:768px){header h1{font-size:1.8rem}.grid{grid-template-columns:1fr}.crm-stat{min-width:70px;padding:8px 12px}.crm-stat .num{font-size:1.2rem}}
+</style></head><body>
+<header><h1>🌐 CRM · Sitios Web</h1><p>24 sitios · <strong>Chinchiná</strong> + <strong>Santa Rosa</strong> · Estado comercial en vivo</p></header>
+<div class="container">
+  <div class="crm-summary" id="crmSummary">
+    <div class="crm-stat pendiente"><div class="num" id="stat-pendiente">0</div><div class="label">Pendiente</div></div>
+    <div class="crm-stat contactado"><div class="num" id="stat-contactado">0</div><div class="label">Contactado</div></div>
+    <div class="crm-stat seguimiento1"><div class="num" id="stat-seguimiento1">0</div><div class="label">1er Seg.</div></div>
+    <div class="crm-stat seguimiento2"><div class="num" id="stat-seguimiento2">0</div><div class="label">2do Seg.</div></div>
+    <div class="crm-stat cerrado"><div class="num" id="stat-cerrado">0</div><div class="label">Cerrado</div></div>
+  </div>
+  <a href="./informe-comercial.html" target="_blank" class="informe-link"><h2>📊 Ver Informe Comercial</h2><p>Fichas técnicas, fortalezas y speech de venta para cada negocio</p></a>
+  <div class="loc-tabs" id="locTabs">
+    <button class="loc-tab" onclick="filterCRM('all', this)">📍 Todos (24)</button>
+    <button class="loc-tab" onclick="filterCRM('chinchina', this)">🏔 Chinchiná</button>
+    <button class="loc-tab" onclick="filterCRM('santarosa', this)">🌋 Santa Rosa</button>
+    <button class="loc-tab" onclick="filterCRM('pendiente', this)">⏳ Pendiente</button>
+    <button class="loc-tab" onclick="filterCRM('cerrado', this)">✅ Cerrados</button>
+  </div>
+  <div class="grid" id="bizGrid">
+  <div class="card" data-location="chinchina" data-idx="1"><div class="bar" style="background:#2563eb"></div>
+    <h3>#1 Almacenes Oportunidades</h3>
+    <div class="rating">★ 4.2 · Chinchiná</div>
+    <div class="info">Cra. 8 #8-19, Chinchiná, Caldas · 📞 68503315</div>
+    <div class="actions">
+      <a href="./01-almacenes-oportunidades/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="1" onchange="updateCRM(1, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-1"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="2"><div class="bar" style="background:#dc2626"></div>
+    <h3>#2 Ranchero Rústico Paisa</h3>
+    <div class="rating">★ 4.3 · Chinchiná</div>
+    <div class="info">29RSC, Chinchiná, Caldas · 📞 3184153310</div>
+    <div class="actions">
+      <a href="./02-ranchero-rustico-paisa/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="2" onchange="updateCRM(2, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-2"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="3"><div class="bar" style="background:#059669"></div>
+    <h3>#3 La Postrera Campestre</h3>
+    <div class="rating">★ 4.5 · Chinchiná</div>
+    <div class="info">Km 9 vía, Chinchiná, Santa Rosa de Cabal, Risaralda · 📞 3216413280</div>
+    <div class="actions">
+      <a href="./03-la-postrera-campestre/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="3" onchange="updateCRM(3, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-3"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="4"><div class="bar" style="background:#7c3aed"></div>
+    <h3>#4 Compañía Cafetera La Meseta S.A.S</h3>
+    <div class="rating">★ 4.4 · Chinchiná</div>
+    <div class="info">Cra. 5 #6 – 30, Chinchiná, Caldas · 📞 6068406080</div>
+    <div class="actions">
+      <a href="./04-compania-cafetera-la-meseta-sas/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="4" onchange="updateCRM(4, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-4"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="5"><div class="bar" style="background:#e11d48"></div>
+    <h3>#5 Zumo&amp;Humo</h3>
+    <div class="rating">★ 4.6 · Chinchiná</div>
+    <div class="info">176020, Chinchiná, Caldas · 📞 3209005325</div>
+    <div class="actions">
+      <a href="./05-zumohumo/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="5" onchange="updateCRM(5, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-5"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="6"><div class="bar" style="background:#16a34a"></div>
+    <h3>#6 Parque Ecológico Fundación Salva el Amazonas</h3>
+    <div class="rating">★ 4.2 · Chinchiná</div>
+    <div class="info">Via, Chinchiná, Manizales, Caldas · 📞 3105991153</div>
+    <div class="actions">
+      <a href="./06-parque-ecologico-fundacion-salva-el-amaz/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="6" onchange="updateCRM(6, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-6"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="7"><div class="bar" style="background:#d97706"></div>
+    <h3>#7 La Tarima Cafe Cultural</h3>
+    <div class="rating">★ 4.7 · Chinchiná</div>
+    <div class="info">Cl. 12 #8-22, Chinchiná, Caldas · 📞 3147304497</div>
+    <div class="actions">
+      <a href="./07-la-tarima-cafe-cultural/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="7" onchange="updateCRM(7, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-7"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="8"><div class="bar" style="background:#0891b2"></div>
+    <h3>#8 Diez de10 Coffee &amp; Brunch</h3>
+    <div class="rating">★ 5.0 · Chinchiná</div>
+    <div class="info">20540, Cl. 12 #7-54, Chinchiná, Caldas · 📞 3043770618</div>
+    <div class="actions">
+      <a href="./08-diez-de10-coffee-brunch/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="8" onchange="updateCRM(8, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-8"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="9"><div class="bar" style="background:#4f46e5"></div>
+    <h3>#9 Supermercado El Campesino</h3>
+    <div class="rating">★ 4.2 · Chinchiná</div>
+    <div class="info">Cl. 9, Chinchiná, Caldas · 📞 6068403432</div>
+    <div class="actions">
+      <a href="./09-supermercado-el-campesino/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="9" onchange="updateCRM(9, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-9"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="10"><div class="bar" style="background:#a21caf"></div>
+    <h3>#10 MonRut Café</h3>
+    <div class="rating">★ 4.9 · Chinchiná</div>
+    <div class="info"> · 📞 3114625414</div>
+    <div class="actions">
+      <a href="./10-monrut-cafe/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="10" onchange="updateCRM(10, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-10"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="11"><div class="bar" style="background:#2563eb"></div>
+    <h3>#11 Almacen El Mejor</h3>
+    <div class="rating">★ 4.7 · Santa Rosa</div>
+    <div class="info">Cra. 14 #15-62, Santa Rosa de Cabal, Risaralda · 📞 13642844</div>
+    <div class="actions">
+      <a href="./SR-11-almacen-el-mejor/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="11" onchange="updateCRM(11, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-11"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="12"><div class="bar" style="background:#dc2626"></div>
+    <h3>#12 Desayunos Sorpresa Santa Rosa</h3>
+    <div class="rating">★ 5.0 · Santa Rosa</div>
+    <div class="info">Barrio La Hermosa, Cra. 23 A #19-17, Santa Rosa de Cabal, Risaralda · 📞 3117882889</div>
+    <div class="actions">
+      <a href="./SR-12-desayunos-sorpresa-santa-rosa/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="12" onchange="updateCRM(12, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-12"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="13"><div class="bar" style="background:#059669"></div>
+    <h3>#13 Ibiza Shots - ¡Perreo desde 2008! 🔥 Zona Rosa . Santa Rosa de Cabal</h3>
+    <div class="rating">★ 4.5 · Santa Rosa</div>
+    <div class="info">Ibiza Shots - ¡Perreo desde 2008! 🔥 Zona Rosa . Santa Rosa de Cabal · 📞 3127271021</div>
+    <div class="actions">
+      <a href="./SR-13-ibiza-shots-perreo-desde-2008-zona-rosa-/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="13" onchange="updateCRM(13, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-13"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="14"><div class="bar" style="background:#7c3aed"></div>
+    <h3>#14 Lujosell Accesorios Santa Rosa - Centro</h3>
+    <div class="rating">★ 5.0 · Santa Rosa</div>
+    <div class="info">Cra. 14 #14-23, centro, Santa Rosa de Cabal, Risaralda · 📞 3135516142</div>
+    <div class="actions">
+      <a href="./SR-14-lujosell-accesorios-santa-rosa-centro/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="14" onchange="updateCRM(14, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-14"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="15"><div class="bar" style="background:#e11d48"></div>
+    <h3>#15 Olímpica Santa Rosa</h3>
+    <div class="rating">★ 4.3 · Santa Rosa</div>
+    <div class="info">Cl. 15 #11 - 40, Santa Rosa de Cabal, Risaralda · 📞 018000510510</div>
+    <div class="actions">
+      <a href="./SR-15-olimpica-santa-rosa/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="15" onchange="updateCRM(15, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-15"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="16"><div class="bar" style="background:#16a34a"></div>
+    <h3>#16 RESTAURANTE Y CEVICHERIA EL COSTEÑO</h3>
+    <div class="rating">★ 4.5 · Santa Rosa</div>
+    <div class="info"> · 📞 3224074826</div>
+    <div class="actions">
+      <a href="./SR-16-restaurante-y-cevicheria-el-costeno/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="16" onchange="updateCRM(16, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-16"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="17"><div class="bar" style="background:#d97706"></div>
+    <h3>#17 Restaurante London´s House</h3>
+    <div class="rating">★ 4.6 · Santa Rosa</div>
+    <div class="info"> · 📞 3218525569</div>
+    <div class="actions">
+      <a href="./SR-17-restaurante-londons-house/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="17" onchange="updateCRM(17, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-17"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="18"><div class="bar" style="background:#0891b2"></div>
+    <h3>#18 Tienda naturista en santa rosa</h3>
+    <div class="rating">★ 5.0 · Santa Rosa</div>
+    <div class="info">Tienda naturista en santa rosa · 📞 3148505819</div>
+    <div class="actions">
+      <a href="./SR-18-tienda-naturista-en-santa-rosa/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="18" onchange="updateCRM(18, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-18"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="19"><div class="bar" style="background:#4f46e5"></div>
+    <h3>#19 la rebaja Plus No. 1 DROGUERIA Y MINIMARKET Centro Santa Rosa de Cabal</h3>
+    <div class="rating">★ 4.4 · Santa Rosa</div>
+    <div class="info">la rebaja Plus No. 1 DROGUERIA Y MINIMARKET Centro Santa Rosa de Cabal · 📞 3173004444</div>
+    <div class="actions">
+      <a href="./SR-19-la-rebaja-plus-no-1-drogueria-y-minimark/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="19" onchange="updateCRM(19, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-19"></span>
+    </div></div>
+  <div class="card" data-location="santarosa" data-idx="20"><div class="bar" style="background:#a21caf"></div>
+    <h3>#20 Casa Azul Santa Rosa de Cabal</h3>
+    <div class="rating">★ 4.0 · Santa Rosa</div>
+    <div class="info">Centro Del Mueble, Km 2 Vía Santa Rosa de Cabal - Pereira, Santa Rosa de Cabal, Risaralda · 📞 3136591326</div>
+    <div class="actions">
+      <a href="./SR-20-casa-azul-santa-rosa-de-cabal/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="20" onchange="updateCRM(20, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-20"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="21"><div class="bar" style="background:#2563eb"></div>
+    <h3>#21 La Herencia Bar</h3>
+    <div class="rating">★ 0 · Chinchiná</div>
+    <div class="info"></div>
+    <div class="actions">
+      <a href="https://laherencia.vercel.app/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="21" onchange="updateCRM(21, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-21"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="22"><div class="bar" style="background:#dc2626"></div>
+    <h3>#22 Exercise Gym</h3>
+    <div class="rating">★ 0 · Chinchiná</div>
+    <div class="info"></div>
+    <div class="actions">
+      <a href="https://exer-gym.vercel.app/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="22" onchange="updateCRM(22, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-22"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="23"><div class="bar" style="background:#059669"></div>
+    <h3>#23 Casa Box</h3>
+    <div class="rating">★ 0 · Chinchiná</div>
+    <div class="info"></div>
+    <div class="actions">
+      <a href="https://casabox.vercel.app/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="23" onchange="updateCRM(23, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-23"></span>
+    </div></div>
+  <div class="card" data-location="chinchina" data-idx="24"><div class="bar" style="background:#7c3aed"></div>
+    <h3>#24 Gym Body Building</h3>
+    <div class="rating">★ 0 · Chinchiná</div>
+    <div class="info"></div>
+    <div class="actions">
+      <a href="https://gym-body-building.vercel.app/" target="_blank" class="visit">👁 Ver sitio</a>
+    </div>
+    <div class="crm-row">
+      <select class="crm-status" data-idx="24" onchange="updateCRM(24, this.value)"><option value="Pendiente">Pendiente</option><option value="Contactado">Contactado</option><option value="1er Seguimiento">1er Seguimiento</option><option value="2do Seguimiento">2do Seguimiento</option><option value="Cerrado">Cerrado</option></select>
+      <span class="crm-date" id="crm-date-24"></span>
+    </div></div>
+  </div>
+</div>
+
+<div class="speech-modal" id="speechModal">
+  <div class="speech-content">
+    <button class="close-btn" onclick="closeSpeech()">✕</button>
+    <h2 id="speechTitle"></h2>
+    <div class="speech-body" id="speechBody"></div>
+  </div>
+</div>
+
+<script>
+const BIZ = [{"idx": 1, "name": "Almacenes Oportunidades", "slug": "01-almacenes-oportunidades", "loc": "Chinchiná", "rating": 4.2, "phone": "68503315", "address": "Cra. 8 #8-19, Chinchiná, Caldas"}, {"idx": 2, "name": "Ranchero Rústico Paisa", "slug": "02-ranchero-rustico-paisa", "loc": "Chinchiná", "rating": 4.3, "phone": "3184153310", "address": "29RSC, Chinchiná, Caldas"}, {"idx": 3, "name": "La Postrera Campestre", "slug": "03-la-postrera-campestre", "loc": "Chinchiná", "rating": 4.5, "phone": "3216413280", "address": "Km 9 vía, Chinchiná, Santa Rosa de Cabal, Risaralda"}, {"idx": 4, "name": "Compañía Cafetera La Meseta S.A.S", "slug": "04-compania-cafetera-la-meseta-sas", "loc": "Chinchiná", "rating": 4.4, "phone": "6068406080", "address": "Cra. 5 #6 – 30, Chinchiná, Caldas"}, {"idx": 5, "name": "Zumo&amp;Humo", "slug": "05-zumohumo", "loc": "Chinchiná", "rating": 4.6, "phone": "3209005325", "address": "176020, Chinchiná, Caldas"}, {"idx": 6, "name": "Parque Ecológico Fundación Salva el Amazonas", "slug": "06-parque-ecologico-fundacion-salva-el-amaz", "loc": "Chinchiná", "rating": 4.2, "phone": "3105991153", "address": "Via, Chinchiná, Manizales, Caldas"}, {"idx": 7, "name": "La Tarima Cafe Cultural", "slug": "07-la-tarima-cafe-cultural", "loc": "Chinchiná", "rating": 4.7, "phone": "3147304497", "address": "Cl. 12 #8-22, Chinchiná, Caldas"}, {"idx": 8, "name": "Diez de10 Coffee &amp; Brunch", "slug": "08-diez-de10-coffee-brunch", "loc": "Chinchiná", "rating": 5.0, "phone": "3043770618", "address": "20540, Cl. 12 #7-54, Chinchiná, Caldas"}, {"idx": 9, "name": "Supermercado El Campesino", "slug": "09-supermercado-el-campesino", "loc": "Chinchiná", "rating": 4.2, "phone": "6068403432", "address": "Cl. 9, Chinchiná, Caldas"}, {"idx": 10, "name": "MonRut Café", "slug": "10-monrut-cafe", "loc": "Chinchiná", "rating": 4.9, "phone": "3114625414", "address": ""}, {"idx": 11, "name": "Almacen El Mejor", "slug": "SR-11-almacen-el-mejor", "loc": "Santa Rosa", "rating": 4.7, "phone": "13642844", "address": "Cra. 14 #15-62, Santa Rosa de Cabal, Risaralda"}, {"idx": 12, "name": "Desayunos Sorpresa Santa Rosa", "slug": "SR-12-desayunos-sorpresa-santa-rosa", "loc": "Santa Rosa", "rating": 5.0, "phone": "3117882889", "address": "Barrio La Hermosa, Cra. 23 A #19-17, Santa Rosa de Cabal, Risaralda"}, {"idx": 13, "name": "Ibiza Shots - ¡Perreo desde 2008! 🔥 Zona Rosa . Santa Rosa de Cabal", "slug": "SR-13-ibiza-shots-perreo-desde-2008-zona-rosa-", "loc": "Santa Rosa", "rating": 4.5, "phone": "3127271021", "address": "Ibiza Shots - ¡Perreo desde 2008! 🔥 Zona Rosa . Santa Rosa de Cabal"}, {"idx": 14, "name": "Lujosell Accesorios Santa Rosa - Centro", "slug": "SR-14-lujosell-accesorios-santa-rosa-centro", "loc": "Santa Rosa", "rating": 5.0, "phone": "3135516142", "address": "Cra. 14 #14-23, centro, Santa Rosa de Cabal, Risaralda"}, {"idx": 15, "name": "Olímpica Santa Rosa", "slug": "SR-15-olimpica-santa-rosa", "loc": "Santa Rosa", "rating": 4.3, "phone": "018000510510", "address": "Cl. 15 #11 - 40, Santa Rosa de Cabal, Risaralda"}, {"idx": 16, "name": "RESTAURANTE Y CEVICHERIA EL COSTEÑO", "slug": "SR-16-restaurante-y-cevicheria-el-costeno", "loc": "Santa Rosa", "rating": 4.5, "phone": "3224074826", "address": ""}, {"idx": 17, "name": "Restaurante London´s House", "slug": "SR-17-restaurante-londons-house", "loc": "Santa Rosa", "rating": 4.6, "phone": "3218525569", "address": ""}, {"idx": 18, "name": "Tienda naturista en santa rosa", "slug": "SR-18-tienda-naturista-en-santa-rosa", "loc": "Santa Rosa", "rating": 5.0, "phone": "3148505819", "address": "Tienda naturista en santa rosa"}, {"idx": 19, "name": "la rebaja Plus No. 1 DROGUERIA Y MINIMARKET Centro Santa Rosa de Cabal", "slug": "SR-19-la-rebaja-plus-no-1-drogueria-y-minimark", "loc": "Santa Rosa", "rating": 4.4, "phone": "3173004444", "address": "la rebaja Plus No. 1 DROGUERIA Y MINIMARKET Centro Santa Rosa de Cabal"}, {"idx": 20, "name": "Casa Azul Santa Rosa de Cabal", "slug": "SR-20-casa-azul-santa-rosa-de-cabal", "loc": "Santa Rosa", "rating": 4.0, "phone": "3136591326", "address": "Centro Del Mueble, Km 2 Vía Santa Rosa de Cabal - Pereira, Santa Rosa de Cabal, Risaralda"}, {"idx": 21, "name": "La Herencia Bar", "slug": "la-herencia-bar", "loc": "Chinchiná", "rating": 0, "phone": "", "address": ""}, {"idx": 22, "name": "Exercise Gym", "slug": "exercise-gym", "loc": "Chinchiná", "rating": 0, "phone": "", "address": ""}, {"idx": 23, "name": "Casa Box", "slug": "casa-box", "loc": "Chinchiná", "rating": 0, "phone": "", "address": ""}, {"idx": 24, "name": "Gym Body Building", "slug": "gym-body-building", "loc": "Chinchiná", "rating": 0, "phone": "", "address": ""}];
+const STORAGE_KEY = 'webbuilder_crm';
+const STATUSES = ["Pendiente", "Contactado", "1er Seguimiento", "2do Seguimiento", "Cerrado"];
+
+function loadCRM() {try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }}
+function saveCRM(data) { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+function getStatus(data, idx) { return data[idx] ? data[idx].s : 'Pendiente'; }
+
+function updateCRM(idx, status) {
+  const data = loadCRM();
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('es-CO', {day:'2-digit', month:'2-digit', year:'numeric'});
+  data[idx] = { s: status, d: dateStr };
+  saveCRM(data);
+  document.getElementById('crm-date-' + idx).textContent = dateStr;
+  updateStats();
+  updateFilterBadges();
+}
+
+function updateStats() {
+  const data = loadCRM();
+  const counts = {};
+  STATUSES.forEach(s => counts[s] = 0);
+  BIZ.forEach(b => { const s = getStatus(data, b.idx); counts[s] = (counts[s] || 0) + 1; });
+  STATUSES.forEach(s => {
+    let id = 'stat-pendiente';
+    if (s === 'Pendiente') id = 'stat-pendiente';
+    else if (s === 'Contactado') id = 'stat-contactado';
+    else if (s === '1er Seguimiento') id = 'stat-seguimiento1';
+    else if (s === '2do Seguimiento') id = 'stat-seguimiento2';
+    else if (s === 'Cerrado') id = 'stat-cerrado';
+    document.getElementById(id).textContent = counts[s] || 0;
+  });
+}
+
+const STATUS_COLORS = {
+  'Pendiente': 'rgba(245,158,11,0.15)','Contactado': 'rgba(59,130,246,0.15)',
+  '1er Seguimiento': 'rgba(139,92,246,0.15)','2do Seguimiento': 'rgba(236,72,153,0.15)',
+  'Cerrado': 'rgba(16,185,129,0.15)',
+};
+const STATUS_TEXT = {
+  'Pendiente': '#f59e0b','Contactado': '#3b82f6',
+  '1er Seguimiento': '#8b5cf6','2do Seguimiento': '#ec4899','Cerrado': '#10b981',
+};
+
+function updateFilterBadges() {
+  const data = loadCRM();
+  document.querySelectorAll('.card').forEach(card => {
+    const idx = parseInt(card.dataset.idx);
+    const s = getStatus(data, idx);
+    let badge = card.querySelector('.crm-badge');
+    if (!badge) { badge = document.createElement('span'); badge.className = 'crm-badge'; card.querySelector('h3').appendChild(badge); }
+    badge.textContent = s;
+    badge.style.background = STATUS_COLORS[s] || 'rgba(255,255,255,0.08)';
+    badge.style.color = STATUS_TEXT[s] || '#aaa';
+  });
+}
+
+function filterCRM(filter, btn) {
+  document.querySelectorAll('.loc-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const data = loadCRM();
+  document.querySelectorAll('.card').forEach(card => {
+    const loc = card.dataset.location;
+    const idx = parseInt(card.dataset.idx);
+    const s = getStatus(data, idx);
+    let visible = true;
+    if (filter === 'chinchina') visible = loc === 'chinchina';
+    else if (filter === 'santarosa') visible = loc === 'santarosa';
+    else if (filter === 'pendiente') visible = s === 'Pendiente';
+    else if (filter === 'cerrado') visible = s === 'Cerrado';
+    card.classList.toggle('hidden', !visible);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const data = loadCRM();
+  BIZ.forEach(b => {
+    const sel = document.querySelector('.crm-status[data-idx="' + b.idx + '"]');
+    if (sel) {
+      sel.value = getStatus(data, b.idx);
+      const d = data[b.idx];
+      if (d) document.getElementById('crm-date-' + b.idx).textContent = d.d || '';
+    }
+  });
+  updateStats();
+  updateFilterBadges();
+  const allBtn = document.querySelector('.loc-tab');
+  if (allBtn) allBtn.classList.add('active');
+});
+</script></body></html>

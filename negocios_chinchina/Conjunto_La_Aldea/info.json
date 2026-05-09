@@ -1,0 +1,27 @@
+{
+  "name": "Conjunto La Aldea",
+  "address": "Cra. 6 #11-18, Chinchiná, Caldas",
+  "phone": "68402678",
+  "website": "",
+  "rating": 4.4,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [],
+  "types": [
+    ""
+  ],
+  "social_media": {},
+  "photos": [
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZk-5-TGp5eeYekKWJzlGdhUy3rmd8ctX5NaOHPnZIcMK7ixdw_pTEUY0YXCQGx7wpgYPmmn5hrkaLartu_egYnbq2em-HofRxgzTIg84z-fnMVreggDl8XxyCGHwA_bFFp_wj=w32-h32-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZk-5-TGp5eeYekKWJzlGdhUy3rmd8ctX5NaOHPnZIcMK7ixdw_pTEUY0YXCQGx7wpgYPmmn5hrkaLartu_egYnbq2em-HofRxgzTIg84z-fnMVreggDl8XxyCGHwA_bFFp_wj=w397-h298-k-no",
+      "width": 0,
+      "height": 0
+    }
+  ],
+  "google_maps_url": "https://www.google.com/maps/place/Conjunto+La+Aldea/data=!4m7!3m6!1s0x8e477bf6f7013155:0x4a4bfe81c39fb525!8m2!3d4.9852914!4d-75.6052396!16s%2Fg%2F11cm0mqhb2!19sChIJVTEB9_Z7R44RJbWfw4H-S0o?authuser=0&hl=es-419&rclk=1"
+}

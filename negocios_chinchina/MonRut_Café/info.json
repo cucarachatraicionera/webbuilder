@@ -1,0 +1,92 @@
+{
+  "name": "MonRut Café",
+  "address": "",
+  "phone": "3114625414",
+  "website": "",
+  "rating": 4.9,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [],
+  "types": [
+    "(158)"
+  ],
+  "social_media": {},
+  "photos": [
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE58BTACMFz54cZvXzbDjbxlVHwLUN5zP9nUBilZmy09O-bN24xb7dr0SXq8FVOaSZVHDzDXxmv5fAsK2yfsPw7cmO0uhA8yH50DXWOKxc40-UQ7y1leZuzOPUyOPt9VEd6CGei=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFoxZb9cGTUFAg4A5wkPSoDUIUm4AeMlIA0NT4LwNI8zdbFyRa2S-Ftg-wduaGPdnBbdnFdAFUnjDsepuM033iFyjmLCE3vSGVhOgzJ6tVdolE9epvONRbaGHIZFiuwintRnXI=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGe5PgPfM3vE0bqbd0cWgLxE0MHUO78-e3St34M51S-bQIVNFMQ5dNm03f1agm0C0mv0-Au2gZBgwlcrnYXgF9-QLd3A4nnuLjMv41JWSP4p38PpzsNewReTbBctNQCbYOgcdE4=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGjHoMl8ThMMIZngoEtkOLws_U5zaxpW6dJsy5We0vMWKQ-jexnKxIl_7Vir3t07zy4VO9AEeOQ6bFd9l9OW2UL4s0ZcllGEuHhVMV90A-vCiMVzaXzHLUzFzgdhgZbOksEZwaUg=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjnR_cvH2v3olEcG6vf3ZzYPQN3hIt7ovh_oo-IxSkmu7MUmsQZI8WYIOGDvQZS5yIh3jHTJv1e5shG76MPh1agwgNfI22ROLn-JEfTVCYUt7tIiNgG6ARpSh6XLQBeluiGZiy=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFPVw5eVrqApL9M8wQxk7_V6BEyyeLwgx1DG6jHadAT_JSArGxoKI9-IE4lWvEynOcaMOFEtlcC4oEW-6Qlhzw_hwissET5sEW2VrE5IDIW1_jfKPli_AXi0Zr7TpvJbr0ILF2xJw=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGUZiSaREtdI0eCiQHjp06UsSVp-FePDqiD9IOVmSDpz14LxJSFuqEXU2G9WtLpx5G2dQnxRUkIA6JQc6lMLOwi4GDMJkcs22xek2Vbt3GB-M96QDtvRX8GKT5uu8dsyDhE31jNGw=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF2a7Mvk7toqV5-Fz4Etv0lzAkZdgkuO90LvzIfV_7kKKMefn-SuPIC3yU6wRANcmU9KfmEyYuQYaWYjBkTEZ4M2ZgLXvK1XmRqR5KCf9ypA6aK8XmsFtbsuI7jox32SR__Qbg=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHHQIXjIB54dslIRrdsXvtNHfbqVMBQAgegwN6ZtBOzuIpvpO9NvS5NfvrV12CAMLmwGAKo59AVw1qZK_KPBANTXY5B4M66k4QK8qglcH4VLSVtWED8di_D5YC0GEg2yGrgg2JE=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEmowEpNA880S6yY_P4y2Djs0tdn-YdKXGuFk1T3-oakXfNlLhPXJhj5TDPOzj5Zv3_gpiXiEgWinD5CJZpZi9vMOVSiRv9eh-AO-Iycm_nGPrxJ2tqfUU9P8OUms_hY0GR5_Bew=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGM2DVMngZrfvgKmqFhtfpZYLQy7ahLgYM1E67RlH476o5yOSsAqiXGx2iCL7O0yXy78L6iUD50bUHUQne2yxtXiICY2cpXrL15fr-zAPazKe8xir7RuYh7w8X-OX9YqyFKH5nm=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFyRHPxc0SxSd82yUzGTkhcHi3DTmVizHAkdxanFukZt8nlxFw9bqjvHh3xMc1LtzXnLzeGL7utRToWeuUb9cV9ldkk_-gonfgrNJlkYamfomYchWXA011O5xY2ARfKhhtiN7IC=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE4Vs5_qaO6QpRF52UK4CQ3Gsu092JU9eggt-1ftlNywjd_gogaC36nPOlWIuJNGFHOzA2qjvZERMtgWJPGT7eHaBBoakxPbCaempZFWvlScHOEWDHNrVT_nQ9zSeYjErpyLXYg4g=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEHszNjbIToBTRVp8SyevBpaL-cbcw44b7QcSsUMbuvNQr8ZpaEriKGQIQ5XFVVyN56U03-n3rJot2WuP0EAXnOf52Ku5JQ94zqu3HrLdTIUnxbjuYNbgYFF_fhikE4PxSMvII=w172-h224-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE58BTACMFz54cZvXzbDjbxlVHwLUN5zP9nUBilZmy09O-bN24xb7dr0SXq8FVOaSZVHDzDXxmv5fAsK2yfsPw7cmO0uhA8yH50DXWOKxc40-UQ7y1leZuzOPUyOPt9VEd6CGei=w640-h640-n-k-no",
+      "width": 0,
+      "height": 0
+    }
+  ],
+  "google_maps_url": "https://www.google.com/maps/place/MonRut+Caf%C3%A9/data=!4m7!3m6!1s0x8e477bafeb624131:0xea7dcdcbb00ac1bd!8m2!3d4.9845774!4d-75.6087357!16s%2Fg%2F11sx3dxs7x!19sChIJMUFi6697R44RvcEKsMvNfeo?authuser=0&hl=es-419&rclk=1"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Ciudad De Los Guaduales",
+  "address": "Cra. 10b #38-14, Santa Rosa de Cabal, Dosquebradas, Risaralda",
+  "phone": "3217779448",
+  "website": "",
+  "rating": 4.3,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [],
+  "types": [],
+  "social_media": {},
+  "photos": [
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF4BnZ29nOOP2BnkTF_EGeetI3L3UuKjlGoBjwE9X82M6N3OcjiO9lrh7g8m58B_Akh_2DNLWWNX3EdwvYwTuR6y2ZprflfAj853fdSb7bVHeJeY-S1M5kvp0PLaDNSjmA2VvuaMg=w32-h32-p-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF4BnZ29nOOP2BnkTF_EGeetI3L3UuKjlGoBjwE9X82M6N3OcjiO9lrh7g8m58B_Akh_2DNLWWNX3EdwvYwTuR6y2ZprflfAj853fdSb7bVHeJeY-S1M5kvp0PLaDNSjmA2VvuaMg=w529-h298-k-no",
+      "width": 0,
+      "height": 0
+    }
+  ],
+  "google_maps_url": "https://www.google.com/maps/place/Ciudad+De+Los+Guaduales/@4.8386276,-75.6734398,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3881f742f90e21:0xae9fbc091cc6a18b!8m2!3d4.8386276!4d-75.6734398!16s%2Fg%2F11c5rtq7xr?authuser=0&hl=es-419&entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+}

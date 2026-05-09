@@ -1,0 +1,39 @@
+{
+  "name": "Restaurante Chino Galeria",
+  "address": "Cl. 9 #6-08, Chinchiná, Caldas",
+  "phone": "6068401622",
+  "website": "",
+  "rating": 4.7,
+  "rating_total": 0,
+  "reviews": [],
+  "opening_hours": [
+    "Cierra a las 12 a.m."
+  ],
+  "types": [
+    "(3)"
+  ],
+  "social_media": {},
+  "photos": [
+    {
+      "url": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEaIGM24sSSivF9KW6ikSy4FcwnkjZTnG94H850VhWYj0PK0Bhfx2dz88RlW2OtOAuep6wroW6CEYaohXghLg2prB7DeslWKV_BsHTZWcQuF7JQ_S0knta-6-qqCUrhARhLHsZg=w224-h298-k-no",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://www.google.com/maps/vt/pb=!1m5!1m4!1i15!2i19003!3i31859!4i128!2m2!1e0!3i778999999!2m2!1e2!2sspotlit!3m5!2ses-419!3sco!5e1105!12m1!1e47!4e0!5m1!1e0!23i1368782!23i1368785!23i4861626!23i10211310!23i1381938!23i47054629!23i47029525!23i72272233!23i72272234!23i72272236!23i10212276!23i94278263!23i72458815!23i10211069!23i94243289!23i94255677!23i72860224!23i10211515!23i94260020!23i100799651!23i72549439!27m15!299174093m14!14m13!1m8!1m2!1y10252299192503084533!2y1763262050180709842!2s%2Fg%2F11y1xtvmtb!4m2!1x49844529!2x3538931512!15sgcid%3Achinese_restaurant!2b0!3b0!6b0!8b0",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://www.google.com/maps/vt/pb=!1m5!1m4!1i15!2i19005!3i31859!4i128!2m2!1e0!3i778999999!2m2!1e2!2sspotlit!3m5!2ses-419!3sco!5e1105!12m1!1e47!4e0!5m1!1e0!23i1368782!23i1368785!23i4861626!23i10211310!23i1381938!23i47054629!23i47029525!23i72272233!23i72272234!23i72272236!23i10212276!23i94278263!23i72458815!23i10211069!23i94243289!23i94255677!23i72860224!23i10211515!23i94260020!23i100799651!23i72549439!27m15!299174093m14!14m13!1m8!1m2!1y10252299192503084533!2y1763262050180709842!2s%2Fg%2F11y1xtvmtb!4m2!1x49844529!2x3538931512!15sgcid%3Achinese_restaurant!2b0!3b0!6b0!8b0",
+      "width": 0,
+      "height": 0
+    },
+    {
+      "url": "https://www.google.com/maps/vt/pb=!1m5!1m4!1i15!2i19004!3i31859!4i128!2m2!1e0!3i778999999!2m2!1e2!2sspotlit!3m5!2ses-419!3sco!5e1105!12m1!1e47!4e0!5m1!1e0!23i1368782!23i1368785!23i4861626!23i10211310!23i1381938!23i47054629!23i47029525!23i72272233!23i72272234!23i72272236!23i10212276!23i94278263!23i72458815!23i10211069!23i94243289!23i94255677!23i72860224!23i10211515!23i94260020!23i100799651!23i72549439!27m15!299174093m14!14m13!1m8!1m2!1y10252299192503084533!2y1763262050180709842!2s%2Fg%2F11y1xtvmtb!4m2!1x49844529!2x3538931512!15sgcid%3Achinese_restaurant!2b0!3b0!6b0!8b0",
+      "width": 0,
+      "height": 0
+    }
+  ],
+  "google_maps_url": "https://www.google.com/maps/place/Restaurante+Chino+Galeria/data=!4m7!3m6!1s0x8e477bcbec2ba5f5:0x18785d7e12f2bdd2!8m2!3d4.9844529!4d-75.6035784!16s%2Fg%2F11y1xtvmtb!19sChIJ9aUr7Mt7R44R0r3yEn5deBg?authuser=0&hl=es-419&rclk=1"
+}

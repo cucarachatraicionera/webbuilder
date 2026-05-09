@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "on-error": "#690005",
+                    "secondary-container": "#474746",
+                    "surface-container-highest": "#353535",
+                    "surface-tint": "#ffb596",
+                    "secondary": "#c8c6c5",
+                    "on-secondary-container": "#b7b5b4",
+                    "surface-variant": "#353535",
+                    "surface-container-low": "#1b1b1b",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-background": "#e2e2e2",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary": "#ffb596",
+                    "primary-fixed": "#ffdbcd",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb596",
+                    "inverse-on-surface": "#303030",
+                    "surface-container": "#1f1f1f",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-tertiary-container": "#2f2f2f",
+                    "surface": "#131313",
+                    "primary-container": "#ff6600",
+                    "tertiary": "#c8c6c5",
+                    "outline-variant": "#5a4136",
+                    "background": "#131313",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-surface-variant": "#e3bfb1",
+                    "outline": "#aa8a7d",
+                    "on-surface": "#e2e2e2",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-dim": "#131313",
+                    "inverse-primary": "#a33e00",
+                    "error": "#ffb4ab",
+                    "tertiary-container": "#989696",
+                    "on-secondary": "#313030",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-fixed-variant": "#7c2e00",
+                    "inverse-surface": "#e2e2e2",
+                    "tertiary-fixed": "#e4e2e1",
+                    "on-tertiary": "#303030",
+                    "surface-bright": "#393939",
+                    "on-primary-fixed": "#360f00",
+                    "on-primary": "#581e00",
+                    "on-primary-container": "#561d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "48px",
+                    "grid-margin": "24px",
+                    "unit": "4px",
+                    "grid-gutter": "16px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-bold": ["Inter"]
+            },
+            "fontSize": {
+                    "display-xl": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .outline-text {
+            -webkit-text-stroke: 1px #e2e2e2;
+            color: transparent;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #ff6600;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center px-grid-margin h-20 w-full sticky top-0 z-50 bg-background border-b border-surface-container-highest">
+<div class="flex items-center gap-sm">
+<img alt="EXERCISE Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxFIivNmnW9UOuzz64m8ycqnAva-dYgfTUMallAabYl3Kc7Zz-rao7LqbMw51ST65KqZGYMqBG0rDpskNuzCmiCM8zVkVwEN5huNB1FTc_UtSmxhSOx4x_nEfBTldJiWJ2Et_L0mCiA3Vxk1Oj0o_4Vg5rIjO-CZnIhuWGxVhYIHfer8N7pvwJJvd4BQUv9_xX9bNVqA3Mm3ktvTMxDboBSp3_9haMGQDucM1Pv88zVLac-hyfAOP57E2AWRcojG2WC6m4aTOhWWI"/>
+<span class="font-display-xl text-headline-md font-black tracking-tighter text-primary-container">EXERCISE</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary-container border-b-2 border-primary-container pb-1 font-label-bold text-label-bold hover:text-primary-container transition-all duration-200" href="#">Classes</a>
+<a class="text-secondary font-label-bold text-label-bold hover:text-primary-container transition-all duration-200" href="#">Locations</a>
+<a class="text-secondary font-label-bold text-label-bold hover:text-primary-container transition-all duration-200" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="hidden md:block font-label-bold text-label-bold text-secondary hover:text-on-surface transition-all duration-200">LOGIN</button>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm font-label-bold text-label-bold scale-95 active:scale-90 transition-transform">JOIN NOW</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A gritty, cinematic high-contrast photograph of a professional athlete performing a heavy barbell squat in a dark industrial gym. The scene is illuminated by harsh, focused orange spotlights that cast long shadows and highlight muscle definition. The color palette is dominated by deep blacks and vibrant orange accents, creating an aggressive and intense atmosphere that embodies the 'No Excuses' performance mindset." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_HojtPb2pH4lTZ6ZodkNBRaWNZcJnt_OjZ2YHH0x5C0egndDwDPRY07aQ4dab-HZhW36dgJqburqbyE0Cp43GeidLH3ct6cq_cwyucN43UBpZnim2_OtmW-mSGHZ79e55vYv0HIjWnEwkrSbHwC5dan4ZDs3rR-GkZzDCLdsN-BAX2RyMunzhMkPfIxM_-yOR2RlCDIWMJ55kNw-1blSUsYVFg-pHU5zb5CdsLLFDtEhx9wAfsJITAT-RK6mX8_wWU595zutfto"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+</div>
+<div class="container mx-auto px-grid-margin relative z-10">
+<div class="max-w-4xl border-l-8 border-primary-container pl-lg">
+<h1 class="font-display-xl text-display-xl text-on-surface mb-md">TRANSFORMA TU RUTINA.<br/><span class="text-primary-container">SIN EXCUSAS.</span></h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl mb-xl">Supera tus límites con programas de entrenamiento de élite diseñados para quienes no aceptan la mediocridad.</p>
+<div class="flex gap-md">
+<button class="bg-primary-container text-on-primary-container px-xl py-md font-label-bold text-label-bold scale-95 active:scale-90 transition-transform">EMPEZAR AHORA</button>
+<button class="border-2 border-on-surface text-on-surface px-xl py-md font-label-bold text-label-bold hover:bg-on-surface hover:text-background transition-all">VER PLANES</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Welcome Section -->
+<section class="py-xl bg-surface-container-lowest">
+<div class="container mx-auto px-grid-margin text-center">
+<h2 class="font-display-xl text-display-xl outline-text mb-sm">BIENVENIDO A EXERCISE.</h2>
+<h3 class="font-headline-lg text-headline-lg text-primary-container mb-lg">DESCUBRE TU VERDADERO POTENCIAL.</h3>
+<div class="w-24 h-1 bg-primary-container mx-auto mb-xl"></div>
+<p class="font-body-lg text-body-lg text-secondary max-w-3xl mx-auto italic">
+                    "En EXERCISE, no vendemos membresías. Forjamos carácter. Nuestra metodología está basada en el rendimiento puro, la ciencia del deporte y la disciplina inquebrantable."
+                </p>
+</div>
+</section>
+<!-- Services Section (Bento Grid) -->
+<section class="py-xl container mx-auto px-grid-margin">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter auto-rows-[300px]">
+<!-- Classes -->
+<div class="md:col-span-8 relative overflow-hidden group bg-surface-container">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" data-alt="A dynamic wide-angle shot of a high-intensity interval training class in a modern, dark-themed gym facility. Participants are silhouetted against vibrant orange LED strips that line the walls. The atmosphere is energetic and focused, with a misty industrial haze illuminated by sharp overhead lights. The aesthetic is professional, athletic, and high-performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZCjvbrE48jPLy1AQdA4HZc-UfP9D6rAt3G6B0yFkzXNkp72SJnaQ4lhAx4DHoOQTyfsWAlb0O93KePzHBuWiy1rHhRyoaZiu73qOHO5L5HlgKxnwfaL6LoqHpynrI9NCIs9gjoMrDPX99o7lwpHpUqUNOI9SfpHWmAfqJCxs1vJrL3cyd66hgs-bXs7AoafKvsa4ZUbjmpy4A2AUZOGzEehUS2fsKuNZQr1muqLfoHJZMo3RjheAVya9frpFD2-NUB1Beb8pq9W8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<span class="bg-primary-container text-on-primary-container px-sm py-xs font-label-bold text-xs uppercase mb-sm inline-block">GRUPALES</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">CLASSES DE ALTO IMPACTO</h4>
+<p class="text-secondary font-body-md mt-sm max-w-md">Desde CrossFit hasta HIIT, desafiamos cada fibra de tu cuerpo.</p>
+</div>
+</div>
+<!-- Nutrition -->
+<div class="md:col-span-4 relative overflow-hidden group bg-surface-container border-l-4 border-primary-container">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50" data-alt="A minimalist and sharp top-down view of a performance-focused meal prep layout on a black slate background. Bright orange citrus slices and vibrant greens provide high-contrast accents. The lighting is crisp and surgical, emphasizing the clean and scientific approach to performance nutrition. The mood is disciplined, healthy, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK5NKO5RebNeJqP4UaVNzVjiNNMKfiRDRRJR_hCW9tb36NbaUteR2OFsB2Gk7uyk4pZv2BbAOpuC3g4C3_UZd9_yeHtxlLYjIl_N1M4aAYGG2H6qiPQDcgSMSWvu_kCOL9JaNYQpU3Fpq2CcQOfhF10SaHp_ekmxsiKMqRrIeEJ65E_6grI3hNrKs4ldmXEYRAHsysM9E1Dkmach_QbWEzYc7sHzjJ7NGUpl0dY3XYlHDNO2j80n3oPer54M-jboHUnSpDKMz-CL4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<h4 class="font-headline-md text-headline-md text-on-surface">NUTRICIÓN</h4>
+<p class="text-secondary font-body-md mt-sm">Combustible de precisión para resultados reales.</p>
+</div>
+</div>
+<!-- Personal Training -->
+<div class="md:col-span-12 relative overflow-hidden group bg-surface-container h-[400px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" data-alt="A focused close-up of a personal trainer monitoring an athlete's form during a heavy lift. The trainer is wearing professional black gear with a subtle orange EXERCISE brand logo. The background is a blurred, high-end gym environment with industrial textures and moody lighting. The image communicates expertise, guidance, and the intense bond between coach and athlete." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyeW0_cho12BvknbeyjlymM-yOT5uM-2DtC8Thhom0FPJj4bnkXkUl9Ss60IIbKFUGhHK5O7EI6OgyXLB9Nk5zvsifKnD4_PFy3FQTSEcM49UtN7fXK3nZnEW7LN0uhCADYAxvTQ1jd-2FbF_yTcDnRzbR7uScXudxAuplp1wBUlDKhpHHO-EYy_fm8CaiChF5KrPFTz-ZUhJGsQB5PHJh5XN6Xuu_vzxpDwrnj7PCvXOZ9cH7AR6eVTFf2HXaw6f-2mSoZsNK7uc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full flex flex-col md:flex-row justify-between items-end">
+<div class="max-w-xl">
+<h4 class="font-display-xl text-headline-lg text-on-surface uppercase italic">ENTRENAMIENTO PERSONALIZADO</h4>
+<p class="text-secondary font-body-lg mt-sm">Atención 1 a 1 para optimizar cada segundo de tu entrenamiento.</p>
+</div>
+<button class="bg-on-surface text-background px-lg py-md font-label-bold mt-md md:mt-0 hover:bg-primary-container transition-colors">RESERVAR SESIÓN</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section (Chinchiná) -->
+<section class="bg-surface-container-low py-xl">
+<div class="container mx-auto px-grid-margin">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div>
+<span class="text-primary-container font-label-bold uppercase tracking-widest text-sm mb-sm block">NUEVA APERTURA</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-lg">NUESTRA SEDE EN CHINCHINÁ</h2>
+<div class="space-y-lg">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<h5 class="font-label-bold text-on-surface">DIRECCIÓN</h5>
+<p class="text-secondary">Gym Body Building - Cl. 11 #8-50, Chinchiná, Caldas</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<h5 class="font-label-bold text-on-surface">HORARIOS</h5>
+<p class="text-secondary">Lunes a Viernes: Abre a las 5:00 AM</p>
+<p class="text-secondary">Sábados y Domingos: 7:00 AM - 4:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<div>
+<h5 class="font-label-bold text-on-surface">SERVICIOS EXCLUSIVOS</h5>
+<div class="flex flex-wrap gap-sm mt-sm">
+<span class="bg-surface-container-highest px-sm py-xs text-[10px] font-black uppercase text-on-surface border border-primary-container">ZONA DE PESO LIBRE</span>
+<span class="bg-surface-container-highest px-sm py-xs text-[10px] font-black uppercase text-on-surface border border-primary-container">CAFETERÍA FIT</span>
+<span class="bg-surface-container-highest px-sm py-xs text-[10px] font-black uppercase text-on-surface border border-primary-container">SAUNA</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-xl w-full md:w-auto border-2 border-primary-container text-primary-container px-xl py-md font-label-bold hover:bg-primary-container hover:text-on-primary-container transition-all uppercase italic">OBTENER DIRECCIONES</button>
+</div>
+<div class="relative group">
+<div class="absolute -inset-2 bg-primary-container opacity-20 blur-xl group-hover:opacity-40 transition-opacity"></div>
+<div class="relative bg-black h-[500px] w-full overflow-hidden border border-surface-container-highest hard-shadow">
+<img alt="Mapa de ubicación Chinchiná" class="w-full h-full object-cover grayscale invert contrast-125" data-location="Chinchiná" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwN2BIic25ukx5jzfjjXwhENmvGg75tbNEQrE1jtCCIUy59lGKWnKjFWi5OVi5kAT612xdaYaxZQ00eBhBo_xS_6airq-zK7Ln5Y1NpP9c4ORh09YsTngUiYZMeatzueqEkIv1hvuA6k0BgixUSx9EiH7mXpHJrC7boliN8U8R6OxVVyRBgdK8VkATiZYrRVOkDCPltEiYvIGT2l7_aSTBGHPGOZqVcSD6Nmuvv74fFdl6jZ5Ca7ww_GCXQ-hwfelV7izEG7HXlQw"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-xl border-y border-surface-container-highest bg-background">
+<div class="container mx-auto px-grid-margin grid grid-cols-2 md:grid-cols-4 gap-lg text-center">
+<div>
+<span class="block font-display-xl text-headline-lg text-primary-container">15+</span>
+<span class="text-secondary font-label-bold uppercase">SEDES</span>
+</div>
+<div>
+<span class="block font-display-xl text-headline-lg text-primary-container">5k+</span>
+<span class="text-secondary font-label-bold uppercase">ATLETAS</span>
+</div>
+<div>
+<span class="block font-display-xl text-headline-lg text-primary-container">40+</span>
+<span class="text-secondary font-label-bold uppercase">COACHES ELITE</span>
+</div>
+<div>
+<span class="block font-display-xl text-headline-lg text-primary-container">24/7</span>
+<span class="text-secondary font-label-bold uppercase">DISCIPLINA</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section class="py-xl bg-surface-container-low border-t border-surface-container-highest">
+<div class="container mx-auto px-grid-margin max-w-4xl">
+<div class="bg-surface p-lg md:p-xl border-l-8 border-primary-container hard-shadow">
+<h2 class="font-display-xl text-headline-lg text-on-surface mb-md italic uppercase">RECLAMA TU PRIMERA CLASE GRATIS</h2>
+<p class="text-secondary mb-lg font-body-lg">Únete al movimiento. Ingresa tus datos y un coach se pondrá en contacto contigo.</p>
+<form class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="space-y-xs">
+<label class="text-[10px] font-black uppercase text-secondary tracking-widest">Nombre Completo</label>
+<input class="w-full bg-surface-container-highest border-none text-on-surface focus:ring-2 focus:ring-primary-container px-md py-sm font-label-bold" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="text-[10px] font-black uppercase text-secondary tracking-widest">Correo Electrónico</label>
+<input class="w-full bg-surface-container-highest border-none text-on-surface focus:ring-2 focus:ring-primary-container px-md py-sm font-label-bold" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="text-[10px] font-black uppercase text-secondary tracking-widest">Teléfono</label>
+<input class="w-full bg-surface-container-highest border-none text-on-surface focus:ring-2 focus:ring-primary-container px-md py-sm font-label-bold" placeholder="+57 000 0000" required="" type="tel"/>
+</div>
+<div class="md:col-span-3 mt-md">
+<button class="w-full bg-primary-container text-on-primary-container py-md font-display-xl text-headline-md italic uppercase transition-all transform active:scale-95" type="submit">ENVIAR</button>
+</div>
+</form>
+</div>
+</div>
+</section><footer class="bg-surface-container-lowest border-t border-surface-container-highest py-xl">
+<div class="container mx-auto px-grid-margin">
+<div class="flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md font-black text-on-surface mb-sm">EXERCISE</span>
+<p class="text-secondary text-body-md text-center md:text-left">© 2024 EXERCISE PERFORMANCE. NO EXCUSES.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-secondary font-label-bold hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="text-secondary font-label-bold hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="text-secondary font-label-bold hover:text-on-surface transition-colors" href="#">Accessibility</a>
+</div>
+<div class="flex gap-md">
+<a class="w-10 h-10 border border-surface-container-highest flex items-center justify-center hover:border-primary-container hover:text-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-md">public</span>
+</a>
+<a class="w-10 h-10 border border-surface-container-highest flex items-center justify-center hover:border-primary-container hover:text-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-md">share</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<a aria-label="WhatsApp" class="fixed bottom-lg right-lg z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform active:scale-90" href="#">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a></body></html>
