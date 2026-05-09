@@ -419,7 +419,23 @@ function filterCRM(filter, btn) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+async function mergeCallerCRM() {
+  try {
+    const resp = await fetch('./crm_state.json');
+    if (!resp.ok) return;
+    const callerData = await resp.json();
+    const local = loadCRM();
+    for (const [idx, val] of Object.entries(callerData)) {
+      if (!local[idx] || new Date(val.d) >= new Date(local[idx].d)) {
+        local[idx] = val;
+      }
+    }
+    saveCRM(local);
+  } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+  await mergeCallerCRM();
   const data = loadCRM();
   BIZ.forEach(b => {
     const sel = document.querySelector('.crm-status[data-idx="' + b.idx + '"]');

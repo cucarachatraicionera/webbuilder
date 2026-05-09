@@ -29,3 +29,6 @@ Thumbs.db
 
 # Design exercise (unrelated)
 exercise-gym/
+
+# CRM caller state (auto-generated per-session)
+crm_state.json

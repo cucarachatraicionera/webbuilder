@@ -425,7 +425,22 @@ def _generate_hub_and_report():
         f'    card.classList.toggle(\'hidden\', !visible);\n'
         f'  }});\n'
         f'}}\n\n'
-        f'document.addEventListener(\'DOMContentLoaded\', function() {{\n'
+        f'async function mergeCallerCRM() {{\n'
+        f'  try {{\n'
+        f'    const resp = await fetch(\'./crm_state.json\');\n'
+        f'    if (!resp.ok) return;\n'
+        f'    const callerData = await resp.json();\n'
+        f'    const local = loadCRM();\n'
+        f'    for (const [idx, val] of Object.entries(callerData)) {{\n'
+        f'      if (!local[idx] || new Date(val.d) >= new Date(local[idx].d)) {{\n'
+        f'        local[idx] = val;\n'
+        f'      }}\n'
+        f'    }}\n'
+        f'    saveCRM(local);\n'
+        f'  }} catch(e) {{}}\n'
+        f'}}\n\n'
+        f'document.addEventListener(\'DOMContentLoaded\', async function() {{\n'
+        f'  await mergeCallerCRM();\n'
         f'  const data = loadCRM();\n'
         f'  BIZ.forEach(b => {{\n'
         f'    const sel = document.querySelector(\'.crm-status[data-idx="\' + b.idx + \'"]\');\n'
@@ -572,6 +587,10 @@ def _generate_hub_and_report():
     for sub in ["sitios-web", "deploy"]:
         (BASE / sub / "index.html").write_text(hub, encoding="utf-8")
         (BASE / sub / "informe-comercial.html").write_text(report, encoding="utf-8")
+        crm_src = BASE / "crm_state.json"
+        if crm_src.exists():
+            import shutil
+            shutil.copy2(str(crm_src), str(BASE / sub / "crm_state.json"))
 
 
 def main():
